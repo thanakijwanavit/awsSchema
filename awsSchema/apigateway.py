@@ -65,6 +65,9 @@ class Event:
     return body.get(key)
   key = lambda self: json.loads(self.body)['key']
   firstKey = lambda self: next(iter(json.loads(self.body).items()))
+  @classmethod
+  def parseBody(cls, event):
+    return cls.from_dict(event).getBody()
 @dataclass_json
 @dataclass
 class Product:
