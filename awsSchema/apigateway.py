@@ -18,7 +18,7 @@ class Response:
   '''
   body: str
   statusCode: int = 200
-  header: dict = field(default_factory = dict)
+  headers: dict = field(default_factory = dict)
   @classmethod
   def fromDict(cls, dictInput:dict):
     '''
@@ -31,29 +31,32 @@ class Response:
       **dictInput
     )
   @classmethod
-  def getReturn(cls, body:dict, header:dict = {}, statusCode:int = 200)->dict:
+  def getReturn(cls, body:dict, headers:dict = {}, statusCode:int = 200)->dict:
     '''
       output dictionary which is suitable for apigateway proxy integration return
     '''
     returnObj = cls(
       body = json.dumps(body),
-      header = header,
+      headers = headers,
       statusCode = statusCode
                    ).to_dict()
     return returnObj
+  @classmethod
+  def returnError(cls, message:str, statusCode:int = 400, **kwargs)->dict:
+    return cls.getReturn(statusCode = 400, body = {'error': message})
+  @classmethod
+  def returnSuccess(cls, body:dict = {}, **kwargs)->dict:
+    return cls.getReturn(statusCode = 200, body = body, **kwargs)
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclass
 class Event:
   '''
     parse event from apigateway
   '''
-  def __repr__(self):
-    return pformat({
-      'header': self.header,
-      'body': self.getBody()
-           })
   body: str
-  header: dict = field(default_factory = dict)
+  headers: dict = field(default_factory = dict)
+  statusCode: int = 200
   def getBody(self):
     return json.loads(self.body)
   def getProducts(self):
