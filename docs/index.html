@@ -110,27 +110,7 @@ this library uses jsondataclass, and dataclass</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;body&#39;: {&#39;a&#39;: 1},
- &#39;headers&#39;: {&#39;Accept&#39;: &#39;*/*&#39;,
-             &#39;Accept-Encoding&#39;: &#39;gzip, deflate&#39;,
-             &#39;CloudFront-Forwarded-Proto&#39;: &#39;https&#39;,
-             &#39;CloudFront-Is-Desktop-Viewer&#39;: &#39;true&#39;,
-             &#39;CloudFront-Is-Mobile-Viewer&#39;: &#39;False&#39;,
-             &#39;CloudFront-Is-SmartTV-Viewer&#39;: &#39;False&#39;,
-             &#39;CloudFront-Is-Tablet-Viewer&#39;: &#39;False&#39;,
-             &#39;CloudFront-Viewer-Country&#39;: &#39;US&#39;,
-             &#39;Content-Type&#39;: &#39;application/json&#39;,
-             &#39;Host&#39;: &#39;gy415nuibc.execute-api.us-east-1.amazonaws.com&#39;,
-             &#39;Postman-Token&#39;: &#39;9f583ef0-ed83-4a38-aef3-eb9ce3f7a57f&#39;,
-             &#39;User-Agent&#39;: &#39;PostmanRuntime/2.4.5&#39;,
-             &#39;Via&#39;: &#39;1.1 d98420743a69852491bbdea73f7680bd.cloudfront.net &#39;
-                    &#39;(CloudFront)&#39;,
-             &#39;X-Amz-Cf-Id&#39;: &#39;pn-PWIJc6thYnZm5P0NMgOUglL1DYtl0gdeJky8tqsg8iS_sgsKD1A==&#39;,
-             &#39;X-Forwarded-For&#39;: &#39;54.240.196.186, 54.182.214.83&#39;,
-             &#39;X-Forwarded-Port&#39;: &#39;443&#39;,
-             &#39;X-Forwarded-Proto&#39;: &#39;https&#39;,
-             &#39;cache-control&#39;: &#39;no-cache&#39;,
-             &#39;headerName&#39;: &#39;headerValue&#39;}}</pre>
+<pre>Event(body=&#39;{\r\n\t&#34;a&#34;: 1\r\n}&#39;, headers={&#39;Accept&#39;: &#39;*/*&#39;, &#39;Accept-Encoding&#39;: &#39;gzip, deflate&#39;, &#39;cache-control&#39;: &#39;no-cache&#39;, &#39;CloudFront-Forwarded-Proto&#39;: &#39;https&#39;, &#39;CloudFront-Is-Desktop-Viewer&#39;: &#39;true&#39;, &#39;CloudFront-Is-Mobile-Viewer&#39;: &#39;False&#39;, &#39;CloudFront-Is-SmartTV-Viewer&#39;: &#39;False&#39;, &#39;CloudFront-Is-Tablet-Viewer&#39;: &#39;False&#39;, &#39;CloudFront-Viewer-Country&#39;: &#39;US&#39;, &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;headerName&#39;: &#39;headerValue&#39;, &#39;Host&#39;: &#39;gy415nuibc.execute-api.us-east-1.amazonaws.com&#39;, &#39;Postman-Token&#39;: &#39;9f583ef0-ed83-4a38-aef3-eb9ce3f7a57f&#39;, &#39;User-Agent&#39;: &#39;PostmanRuntime/2.4.5&#39;, &#39;Via&#39;: &#39;1.1 d98420743a69852491bbdea73f7680bd.cloudfront.net (CloudFront)&#39;, &#39;X-Amz-Cf-Id&#39;: &#39;pn-PWIJc6thYnZm5P0NMgOUglL1DYtl0gdeJky8tqsg8iS_sgsKD1A==&#39;, &#39;X-Forwarded-For&#39;: &#39;54.240.196.186, 54.182.214.83&#39;, &#39;X-Forwarded-Port&#39;: &#39;443&#39;, &#39;X-Forwarded-Proto&#39;: &#39;https&#39;}, statusCode=200)</pre>
 </div>
 
 </div>
@@ -141,6 +121,12 @@ this library uses jsondataclass, and dataclass</p>
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="parsing-for-body">parsing for body<a class="anchor-link" href="#parsing-for-body"> </a></h3>
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -148,7 +134,7 @@ this library uses jsondataclass, and dataclass</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">event</span><span class="o">.</span><span class="n">getBody</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Event</span><span class="o">.</span><span class="n">parseBody</span><span class="p">(</span><span class="n">dummyEvent</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -176,7 +162,7 @@ this library uses jsondataclass, and dataclass</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="creating-response-dict">creating response dict<a class="anchor-link" href="#creating-response-dict"> </a></h2>
+<h2 id="creating-response-for-lambda">creating response for lambda<a class="anchor-link" href="#creating-response-for-lambda"> </a></h2>
 </div>
 </div>
 </div>
@@ -187,7 +173,8 @@ this library uses jsondataclass, and dataclass</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Response</span><span class="o">.</span><span class="n">getReturn</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span><span class="s1">&#39;world&#39;</span><span class="p">})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Response</span><span class="o">.</span><span class="n">returnSuccess</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span><span class="s1">&#39;world&#39;</span><span class="p">}))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Response</span><span class="o">.</span><span class="n">returnError</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -199,12 +186,11 @@ this library uses jsondataclass, and dataclass</p>
 
 <div class="output_area">
 
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;body&#39;: &#39;{&#34;hello&#34;:&#34;world&#34;}&#39;, &#39;statusCode&#39;: 200, &#39;headers&#39;: {}}</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;body&#39;: &#39;{&#34;hello&#34;:&#34;world&#34;}&#39;, &#39;statusCode&#39;: 200, &#39;headers&#39;: {}}
+{&#39;body&#39;: &#39;{&#34;error&#34;:&#34;error&#34;}&#39;, &#39;statusCode&#39;: 400, &#39;headers&#39;: {}}
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -228,14 +214,11 @@ this library uses jsondataclass, and dataclass</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
   <span class="c1"># parsing event body</span>
-  <span class="n">e</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
-  <span class="n">body</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">getBody</span><span class="p">()</span>
+  <span class="n">body</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">parseBody</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
   
   
   <span class="c1"># submitting output</span>
-  <span class="k">return</span> <span class="n">Response</span><span class="o">.</span><span class="n">getReturn</span><span class="p">(</span>
-    <span class="n">body</span> <span class="o">=</span> <span class="n">body</span><span class="p">,</span> <span class="n">statusCode</span><span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span><span class="s1">&#39;hello&#39;</span><span class="p">}</span>
-  <span class="p">)</span>
+  <span class="k">return</span> <span class="n">Response</span><span class="o">.</span><span class="n">returnSuccess</span><span class="p">({</span><span class="s1">&#39;success&#39;</span><span class="p">:</span><span class="s1">&#39;true&#39;</span><span class="p">})</span>
 
 <span class="n">lambda_handler</span><span class="p">(</span><span class="n">dummyEvent</span><span class="p">)</span>
 </pre></div>
@@ -252,7 +235,7 @@ this library uses jsondataclass, and dataclass</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;body&#39;: &#39;{&#34;a&#34;:1}&#39;, &#39;statusCode&#39;: 200, &#39;headers&#39;: {&#39;hello&#39;: &#39;hello&#39;}}</pre>
+<pre>{&#39;body&#39;: &#39;{&#34;success&#34;:&#34;true&#34;}&#39;, &#39;statusCode&#39;: 200, &#39;headers&#39;: {}}</pre>
 </div>
 
 </div>
