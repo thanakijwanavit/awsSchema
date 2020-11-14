@@ -63,6 +63,12 @@ this library uses jsondataclass, and dataclass</p>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="API-Gateway-integration">API Gateway integration<a class="anchor-link" href="#API-Gateway-integration"> </a></h2>
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -95,7 +101,7 @@ this library uses jsondataclass, and dataclass</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dummyEvent</span> <span class="o">=</span>  <span class="p">{</span> <span class="s2">&quot;resource&quot;</span><span class="p">:</span> <span class="s2">&quot;/{proxy+}&quot;</span><span class="p">,</span> <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/hello/world&quot;</span><span class="p">,</span> <span class="s2">&quot;httpMethod&quot;</span><span class="p">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="s2">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;*/*&quot;</span><span class="p">,</span> <span class="s2">&quot;Accept-Encoding&quot;</span><span class="p">:</span> <span class="s2">&quot;gzip, deflate&quot;</span><span class="p">,</span> <span class="s2">&quot;cache-control&quot;</span><span class="p">:</span> <span class="s2">&quot;no-cache&quot;</span><span class="p">,</span> <span class="s2">&quot;CloudFront-Forwarded-Proto&quot;</span><span class="p">:</span> <span class="s2">&quot;https&quot;</span><span class="p">,</span> <span class="s2">&quot;CloudFront-Is-Desktop-Viewer&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="s2">&quot;CloudFront-Is-Mobile-Viewer&quot;</span><span class="p">:</span> <span class="s2">&quot;False&quot;</span><span class="p">,</span> <span class="s2">&quot;CloudFront-Is-SmartTV-Viewer&quot;</span><span class="p">:</span> <span class="s2">&quot;False&quot;</span><span class="p">,</span> <span class="s2">&quot;CloudFront-Is-Tablet-Viewer&quot;</span><span class="p">:</span> <span class="s2">&quot;False&quot;</span><span class="p">,</span> <span class="s2">&quot;CloudFront-Viewer-Country&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span> <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span> <span class="s2">&quot;headerName&quot;</span><span class="p">:</span> <span class="s2">&quot;headerValue&quot;</span><span class="p">,</span> <span class="s2">&quot;Host&quot;</span><span class="p">:</span> <span class="s2">&quot;gy415nuibc.execute-api.us-east-1.amazonaws.com&quot;</span><span class="p">,</span> <span class="s2">&quot;Postman-Token&quot;</span><span class="p">:</span> <span class="s2">&quot;9f583ef0-ed83-4a38-aef3-eb9ce3f7a57f&quot;</span><span class="p">,</span> <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;PostmanRuntime/2.4.5&quot;</span><span class="p">,</span> <span class="s2">&quot;Via&quot;</span><span class="p">:</span> <span class="s2">&quot;1.1 d98420743a69852491bbdea73f7680bd.cloudfront.net (CloudFront)&quot;</span><span class="p">,</span> <span class="s2">&quot;X-Amz-Cf-Id&quot;</span><span class="p">:</span> <span class="s2">&quot;pn-PWIJc6thYnZm5P0NMgOUglL1DYtl0gdeJky8tqsg8iS_sgsKD1A==&quot;</span><span class="p">,</span> <span class="s2">&quot;X-Forwarded-For&quot;</span><span class="p">:</span> <span class="s2">&quot;54.240.196.186, 54.182.214.83&quot;</span><span class="p">,</span> <span class="s2">&quot;X-Forwarded-Port&quot;</span><span class="p">:</span> <span class="s2">&quot;443&quot;</span><span class="p">,</span> <span class="s2">&quot;X-Forwarded-Proto&quot;</span><span class="p">:</span> <span class="s2">&quot;https&quot;</span> <span class="p">},</span> <span class="s2">&quot;multiValueHeaders&quot;</span><span class="p">:{</span> <span class="s1">&#39;Accept&#39;</span><span class="p">:[</span> <span class="s2">&quot;*/*&quot;</span> <span class="p">],</span> <span class="s1">&#39;Accept-Encoding&#39;</span><span class="p">:[</span> <span class="s2">&quot;gzip, deflate&quot;</span> <span class="p">],</span> <span class="s1">&#39;cache-control&#39;</span><span class="p">:[</span> <span class="s2">&quot;no-cache&quot;</span> <span class="p">],</span> <span class="s1">&#39;CloudFront-Forwarded-Proto&#39;</span><span class="p">:[</span> <span class="s2">&quot;https&quot;</span> <span class="p">],</span> <span class="s1">&#39;CloudFront-Is-Desktop-Viewer&#39;</span><span class="p">:[</span> <span class="s2">&quot;true&quot;</span> <span class="p">],</span> <span class="s1">&#39;CloudFront-Is-Mobile-Viewer&#39;</span><span class="p">:[</span> <span class="s2">&quot;False&quot;</span> <span class="p">],</span> <span class="s1">&#39;CloudFront-Is-SmartTV-Viewer&#39;</span><span class="p">:[</span> <span class="s2">&quot;False&quot;</span> <span class="p">],</span> <span class="s1">&#39;CloudFront-Is-Tablet-Viewer&#39;</span><span class="p">:[</span> <span class="s2">&quot;False&quot;</span> <span class="p">],</span> <span class="s1">&#39;CloudFront-Viewer-Country&#39;</span><span class="p">:[</span> <span class="s2">&quot;US&quot;</span> <span class="p">],</span> <span class="s1">&#39;&#39;</span><span class="p">:[</span> <span class="s2">&quot;&quot;</span> <span class="p">],</span> <span class="s1">&#39;Content-Type&#39;</span><span class="p">:[</span> <span class="s2">&quot;application/json&quot;</span> <span class="p">],</span> <span class="s1">&#39;headerName&#39;</span><span class="p">:[</span> <span class="s2">&quot;headerValue&quot;</span> <span class="p">],</span> <span class="s1">&#39;Host&#39;</span><span class="p">:[</span> <span class="s2">&quot;gy415nuibc.execute-api.us-east-1.amazonaws.com&quot;</span> <span class="p">],</span> <span class="s1">&#39;Postman-Token&#39;</span><span class="p">:[</span> <span class="s2">&quot;9f583ef0-ed83-4a38-aef3-eb9ce3f7a57f&quot;</span> <span class="p">],</span> <span class="s1">&#39;User-Agent&#39;</span><span class="p">:[</span> <span class="s2">&quot;PostmanRuntime/2.4.5&quot;</span> <span class="p">],</span> <span class="s1">&#39;Via&#39;</span><span class="p">:[</span> <span class="s2">&quot;1.1 d98420743a69852491bbdea73f7680bd.cloudfront.net (CloudFront)&quot;</span> <span class="p">],</span> <span class="s1">&#39;X-Amz-Cf-Id&#39;</span><span class="p">:[</span> <span class="s2">&quot;pn-PWIJc6thYnZm5P0NMgOUglL1DYtl0gdeJky8tqsg8iS_sgsKD1A==&quot;</span> <span class="p">],</span> <span class="s1">&#39;X-Forwarded-For&#39;</span><span class="p">:[</span> <span class="s2">&quot;54.240.196.186, 54.182.214.83&quot;</span> <span class="p">],</span> <span class="s1">&#39;X-Forwarded-Port&#39;</span><span class="p">:[</span> <span class="s2">&quot;443&quot;</span> <span class="p">],</span> <span class="s1">&#39;X-Forwarded-Proto&#39;</span><span class="p">:[</span> <span class="s2">&quot;https&quot;</span> <span class="p">]</span> <span class="p">},</span> <span class="s2">&quot;queryStringParameters&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;me&quot;</span><span class="p">,</span> <span class="s2">&quot;multivalueName&quot;</span><span class="p">:</span> <span class="s2">&quot;me&quot;</span> <span class="p">},</span> <span class="s2">&quot;multiValueQueryStringParameters&quot;</span><span class="p">:{</span> <span class="s2">&quot;name&quot;</span><span class="p">:[</span> <span class="s2">&quot;me&quot;</span> <span class="p">],</span> <span class="s2">&quot;multivalueName&quot;</span><span class="p">:[</span> <span class="s2">&quot;you&quot;</span><span class="p">,</span> <span class="s2">&quot;me&quot;</span> <span class="p">]</span> <span class="p">},</span> <span class="s2">&quot;pathParameters&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;proxy&quot;</span><span class="p">:</span> <span class="s2">&quot;hello/world&quot;</span> <span class="p">},</span> <span class="s2">&quot;stageVariables&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;stageVariableName&quot;</span><span class="p">:</span> <span class="s2">&quot;stageVariableValue&quot;</span> <span class="p">},</span> <span class="s2">&quot;requestContext&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;accountId&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678912&quot;</span><span class="p">,</span> <span class="s2">&quot;resourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;roq9wj&quot;</span><span class="p">,</span> <span class="s2">&quot;stage&quot;</span><span class="p">:</span> <span class="s2">&quot;testStage&quot;</span><span class="p">,</span> <span class="s2">&quot;requestId&quot;</span><span class="p">:</span> <span class="s2">&quot;deef4878-7910-11e6-8f14-25afc3e9ae33&quot;</span><span class="p">,</span> <span class="s2">&quot;identity&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;cognitoIdentityPoolId&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;accountId&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;cognitoIdentityId&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;caller&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;apiKey&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;sourceIp&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.196.186&quot;</span><span class="p">,</span> <span class="s2">&quot;cognitoAuthenticationType&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;cognitoAuthenticationProvider&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;userArn&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;userAgent&quot;</span><span class="p">:</span> <span class="s2">&quot;PostmanRuntime/2.4.5&quot;</span><span class="p">,</span> <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="kc">None</span> <span class="p">},</span> <span class="s2">&quot;resourcePath&quot;</span><span class="p">:</span> <span class="s2">&quot;/{proxy+}&quot;</span><span class="p">,</span> <span class="s2">&quot;httpMethod&quot;</span><span class="p">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="s2">&quot;apiId&quot;</span><span class="p">:</span> <span class="s2">&quot;gy415nuibc&quot;</span> <span class="p">},</span> <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\r\n\t\&quot;</span><span class="s2">a</span><span class="se">\&quot;</span><span class="s2">: 1</span><span class="se">\r\n</span><span class="s2">}&quot;</span><span class="p">,</span> <span class="s2">&quot;isBase64Encoded&quot;</span><span class="p">:</span> <span class="kc">False</span> <span class="p">}</span>
 <span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">dummyEvent</span><span class="p">)</span>
-<span class="n">event</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -110,7 +116,7 @@ this library uses jsondataclass, and dataclass</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Event(body=&#39;{\r\n\t&#34;a&#34;: 1\r\n}&#39;, headers={&#39;Accept&#39;: &#39;*/*&#39;, &#39;Accept-Encoding&#39;: &#39;gzip, deflate&#39;, &#39;cache-control&#39;: &#39;no-cache&#39;, &#39;CloudFront-Forwarded-Proto&#39;: &#39;https&#39;, &#39;CloudFront-Is-Desktop-Viewer&#39;: &#39;true&#39;, &#39;CloudFront-Is-Mobile-Viewer&#39;: &#39;False&#39;, &#39;CloudFront-Is-SmartTV-Viewer&#39;: &#39;False&#39;, &#39;CloudFront-Is-Tablet-Viewer&#39;: &#39;False&#39;, &#39;CloudFront-Viewer-Country&#39;: &#39;US&#39;, &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;headerName&#39;: &#39;headerValue&#39;, &#39;Host&#39;: &#39;gy415nuibc.execute-api.us-east-1.amazonaws.com&#39;, &#39;Postman-Token&#39;: &#39;9f583ef0-ed83-4a38-aef3-eb9ce3f7a57f&#39;, &#39;User-Agent&#39;: &#39;PostmanRuntime/2.4.5&#39;, &#39;Via&#39;: &#39;1.1 d98420743a69852491bbdea73f7680bd.cloudfront.net (CloudFront)&#39;, &#39;X-Amz-Cf-Id&#39;: &#39;pn-PWIJc6thYnZm5P0NMgOUglL1DYtl0gdeJky8tqsg8iS_sgsKD1A==&#39;, &#39;X-Forwarded-For&#39;: &#39;54.240.196.186, 54.182.214.83&#39;, &#39;X-Forwarded-Port&#39;: &#39;443&#39;, &#39;X-Forwarded-Proto&#39;: &#39;https&#39;}, statusCode=200)</pre>
+<pre>awsSchema.apigateway.Event</pre>
 </div>
 
 </div>
@@ -162,7 +168,7 @@ this library uses jsondataclass, and dataclass</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="creating-response-for-lambda">creating response for lambda<a class="anchor-link" href="#creating-response-for-lambda"> </a></h2>
+<h2 id="creating-response-for-apiGateway">creating response for apiGateway<a class="anchor-link" href="#creating-response-for-apiGateway"> </a></h2>
 </div>
 </div>
 </div>
@@ -218,7 +224,7 @@ this library uses jsondataclass, and dataclass</p>
   
   
   <span class="c1"># submitting output</span>
-  <span class="k">return</span> <span class="n">Response</span><span class="o">.</span><span class="n">returnSuccess</span><span class="p">({</span><span class="s1">&#39;success&#39;</span><span class="p">:</span><span class="s1">&#39;true&#39;</span><span class="p">})</span>
+  <span class="k">return</span> <span class="n">Response</span><span class="o">.</span><span class="n">returnSuccess</span><span class="p">(</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;success&#39;</span><span class="p">:</span><span class="s1">&#39;true&#39;</span><span class="p">})</span>
 
 <span class="n">lambda_handler</span><span class="p">(</span><span class="n">dummyEvent</span><span class="p">)</span>
 </pre></div>
@@ -238,6 +244,62 @@ this library uses jsondataclass, and dataclass</p>
 <pre>{&#39;body&#39;: &#39;{&#34;success&#34;:&#34;true&#34;}&#39;, &#39;statusCode&#39;: 200, &#39;headers&#39;: {}}</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="S3">S3<a class="anchor-link" href="#S3"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">awsSchema.S3</span> <span class="kn">import</span> <span class="n">S3Event</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eventSample</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;Records&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span> <span class="s2">&quot;eventVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;2.1&quot;</span><span class="p">,</span> <span class="s2">&quot;eventSource&quot;</span><span class="p">:</span> <span class="s2">&quot;aws:s3&quot;</span><span class="p">,</span> <span class="s2">&quot;awsRegion&quot;</span><span class="p">:</span> <span class="s2">&quot;us-east-2&quot;</span><span class="p">,</span> <span class="s2">&quot;eventTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-03T19:37:27.192Z&quot;</span><span class="p">,</span> <span class="s2">&quot;eventName&quot;</span><span class="p">:</span> <span class="s2">&quot;ObjectCreated:Put&quot;</span><span class="p">,</span> <span class="s2">&quot;userIdentity&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;principalId&quot;</span><span class="p">:</span> <span class="s2">&quot;AWS:AIDAINPONIXQXHT3IKHL2&quot;</span> <span class="p">},</span> <span class="s2">&quot;requestParameters&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;sourceIPAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;205.255.255.255&quot;</span> <span class="p">},</span> <span class="s2">&quot;responseElements&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;x-amz-request-id&quot;</span><span class="p">:</span> <span class="s2">&quot;D82B88E5F771F645&quot;</span><span class="p">,</span> <span class="s2">&quot;x-amz-id-2&quot;</span><span class="p">:</span> <span class="s2">&quot;vlR7PnpV2Ce81l0PRw6jlUpck7Jo5ZsQjryTjKlc5aLWGVHPZLj5NeC6qMa0emYBDXOo6QBU0Wo=&quot;</span> <span class="p">},</span> <span class="s2">&quot;s3&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;s3SchemaVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span> <span class="s2">&quot;configurationId&quot;</span><span class="p">:</span> <span class="s2">&quot;828aa6fc-f7b5-4305-8584-487c791949c1&quot;</span><span class="p">,</span> <span class="s2">&quot;bucket&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;bucketname&quot;</span><span class="p">,</span> <span class="s2">&quot;ownerIdentity&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;principalId&quot;</span><span class="p">:</span> <span class="s2">&quot;A3I5XTEXAMAI3E&quot;</span> <span class="p">},</span> <span class="s2">&quot;arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:s3:::lambda-artifacts-eafc19498e3f2df&quot;</span> <span class="p">},</span> <span class="s2">&quot;object&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;theKey&quot;</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1305107</span><span class="p">,</span> <span class="s2">&quot;eTag&quot;</span><span class="p">:</span> <span class="s2">&quot;b21b84d653bb07b05b1e6b33684dc11b&quot;</span><span class="p">,</span> <span class="s2">&quot;sequencer&quot;</span><span class="p">:</span> <span class="s2">&quot;0C0F6F405D6ED209E1&quot;</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span> <span class="p">]</span> <span class="p">}</span>
+<span class="n">bucket</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">S3Event</span><span class="o">.</span><span class="n">getKeyObject</span><span class="p">(</span><span class="n">eventSample</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>bucketname theKey
+</pre>
+</div>
 </div>
 
 </div>

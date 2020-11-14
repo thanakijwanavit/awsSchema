@@ -2,12 +2,14 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"Response": "apigateway.ipynb",
+index = {"S3Event": "S3.ipynb",
+         "Response": "apigateway.ipynb",
          "Event": "apigateway.ipynb",
          "Product": "apigateway.ipynb",
          "Products": "apigateway.ipynb"}
 
-modules = ["apigateway.py"]
+modules = ["S3.py",
+           "apigateway.py"]
 
 doc_url = "https://thanakijwanavit.github.io/awsSchema/"
 
