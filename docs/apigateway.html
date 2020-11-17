@@ -65,7 +65,7 @@ nb_path: "apigateway.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Event" class="doc_header"><code>class</code> <code>Event</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L53" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Event</code>(<strong><code>body</code></strong>:<code>str</code>, <strong><code>headers</code></strong>:<code>dict</code>=<em><code>&lt;factory&gt;</code></em>, <strong><code>statusCode</code></strong>:<code>int</code>=<em><code>200</code></em>)</p>
+<h2 id="Event" class="doc_header"><code>class</code> <code>Event</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L58" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Event</code>(<strong><code>body</code></strong>:<code>str</code>, <strong><code>headers</code></strong>:<code>dict</code>=<em><code>&lt;factory&gt;</code></em>, <strong><code>statusCode</code></strong>:<code>int</code>=<em><code>200</code></em>)</p>
 </blockquote>
 <p>parse event from apigateway</p>
 
@@ -90,7 +90,7 @@ nb_path: "apigateway.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Product" class="doc_header"><code>class</code> <code>Product</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L73" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Product</code>(<strong><code>cprcode</code></strong>:<code>str</code>, <strong><code>iprcode</code></strong>:<code>str</code>, <strong><code>oprcode</code></strong>:<code>str</code>, <strong><code>ordertype</code></strong>:<code>str</code>, <strong><code>pr_abb</code></strong>:<code>str</code>)</p>
+<h2 id="Product" class="doc_header"><code>class</code> <code>Product</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L80" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Product</code>(<strong><code>cprcode</code></strong>:<code>str</code>, <strong><code>iprcode</code></strong>:<code>str</code>, <strong><code>oprcode</code></strong>:<code>str</code>, <strong><code>ordertype</code></strong>:<code>str</code>, <strong><code>pr_abb</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Product(cprcode: str, iprcode: str, oprcode: str, ordertype: str, pr_abb: str)</p>
 
@@ -115,7 +115,7 @@ nb_path: "apigateway.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Products" class="doc_header"><code>class</code> <code>Products</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L81" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Products</code>(<strong><code>products</code></strong>:<code>List</code>[<a href="/awsSchema/apigateway.html#Product"><code>Product</code></a>])</p>
+<h2 id="Products" class="doc_header"><code>class</code> <code>Products</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L88" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Products</code>(<strong><code>products</code></strong>:<code>List</code>[<a href="/awsSchema/apigateway.html#Product"><code>Product</code></a>])</p>
 </blockquote>
 <p>Products(products: List[awsSchema.apigateway.Product])</p>
 
@@ -263,6 +263,73 @@ nb_path: "apigateway.ipynb"
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;body&#39;: &#39;{&#34;error&#34;:&#34;error&#34;}&#39;, &#39;statusCode&#39;: 400, &#39;headers&#39;: {}}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">responseDict</span> <span class="o">=</span> <span class="n">Response</span><span class="o">.</span><span class="n">returnSuccess</span><span class="p">(</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;success&#39;</span><span class="p">:</span><span class="s1">&#39;true&#39;</span><span class="p">})</span>
+<span class="n">Response</span><span class="o">.</span><span class="n">fromDict</span><span class="p">(</span><span class="n">responseDict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Response(body={&#39;success&#39;: &#39;true&#39;}, statusCode=200, headers={})</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Event</span><span class="o">.</span><span class="n">getInput</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;input&#39;</span><span class="p">:</span><span class="s1">&#39;123&#39;</span><span class="p">})</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;body&#39;: &#39;{&#34;input&#34;:&#34;123&#34;}&#39;, &#39;headers&#39;: {}, &#39;statusCode&#39;: 200}</pre>
 </div>
 
 </div>

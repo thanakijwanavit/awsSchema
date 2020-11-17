@@ -20,6 +20,11 @@ class Response:
   statusCode: int = 200
   headers: dict = field(default_factory = dict)
   @classmethod
+  def parseBody(cls, dictInput:dict):
+    response = cls.fromDict(dictInput)
+    return response.body
+
+  @classmethod
   def fromDict(cls, dictInput:dict):
     '''
       output object from Dict,
@@ -68,6 +73,8 @@ class Event:
   @classmethod
   def parseBody(cls, event):
     return cls.from_dict(event).getBody()
+  def getInput(body={},headers={},statusCode=200):
+    return Event(body=json.dumps(body),headers=headers,statusCode=statusCode).to_dict()
 @dataclass_json
 @dataclass
 class Product:

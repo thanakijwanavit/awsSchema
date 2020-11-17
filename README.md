@@ -79,6 +79,14 @@ lambda_handler(dummyEvent)
 
 
 
+## getting around lambda proxy integration for sdk
+
+```python
+
+#trigger lambda
+lambda_handler(Event.)
+```
+
 ## S3
 
 ```python
