@@ -2,6 +2,7 @@
   "awsSchema": {
     "Overview": "/",
     "S3": "S3.html",
-    "apigateway schema for lambda proxy integration": "apigateway.html"
+    "apigateway schema for lambda proxy integration": "apigateway.html",
+    "Dynamodb": "dynamodb.html"
   }
 }

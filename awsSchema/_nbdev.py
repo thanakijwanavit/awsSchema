@@ -9,7 +9,8 @@ index = {"S3Event": "S3.ipynb",
          "Products": "apigateway.ipynb"}
 
 modules = ["S3.py",
-           "apigateway.py"]
+           "apigateway.py",
+           "dynamodb.py"]
 
 doc_url = "https://thanakijwanavit.github.io/awsSchema/"
 

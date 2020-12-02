@@ -82,10 +82,18 @@ lambda_handler(dummyEvent)
 ## getting around lambda proxy integration for sdk
 
 ```python
-
 #trigger lambda
-lambda_handler(Event.)
+inputBody = {'test':'123'}
+
+inputToFunction = Event.getInput(body = inputBody) ; print(f'inputToFunction is {inputToFunction}')
+response = lambda_handler(inputToFunction); print(f'rawResponse is {response}')
+parsedResponse = Response.parseBody(response); print(f'parsedResponse is {parsedResponse}')
 ```
+
+    inputToFunction is {'body': '{"test":"123"}', 'headers': {}, 'statusCode': 200}
+    rawResponse is {'body': '{"success":"true"}', 'statusCode': 200, 'headers': {}}
+    parsedResponse is {'success': 'true'}
+
 
 ## S3
 
@@ -101,4 +109,52 @@ print(bucket,key)
 ```
 
     bucketname theKey
+
+
+## Parsing data class directly
+
+```python
+from dataclasses import field
+from dataclasses import dataclass, field
+from dataclasses_json import dataclass_json, Undefined
+@dataclass_json
+@dataclass
+class Product:
+  cprcode: str
+  iprcode: str
+  oprcode: str
+  ordertype: str
+  pr_abb: str
+    
+productDict = Product(
+  cprcode='123',
+  iprcode='123',
+  oprcode= '12343',
+  ordertype='3225',
+  pr_abb='4563'
+).to_dict()
+productDict
+```
+
+
+
+
+    {'cprcode': '123',
+     'iprcode': '123',
+     'oprcode': '12343',
+     'ordertype': '3225',
+     'pr_abb': '4563'}
+
+
+
+```python
+event = Event.getInput(productDict)
+Event.parseDataClass(Product, event)
+```
+
+
+
+
+    Product(cprcode='123', iprcode='123', oprcode='12343', ordertype='3225', pr_abb='4563')
+
 

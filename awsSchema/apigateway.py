@@ -62,8 +62,11 @@ class Event:
   body: str
   headers: dict = field(default_factory = dict)
   statusCode: int = 200
-  def getBody(self):
-    return json.loads(self.body)
+  def getBody(self,*args):
+    try:
+      return json.loads(self.body)
+    except:
+      return Event.parseBody(self,*args)
   def getProducts(self):
     return Products.from_json(self.body)
   def getKey(self, key='product'):
@@ -71,10 +74,20 @@ class Event:
   key = lambda self: json.loads(self.body)['key']
   firstKey = lambda self: next(iter(json.loads(self.body).items()))
   @classmethod
-  def parseBody(cls, event):
+  def parseBody(cls, event, *args):
     return cls.from_dict(event).getBody()
-  def getInput(body={},headers={},statusCode=200):
-    return Event(body=json.dumps(body),headers=headers,statusCode=statusCode).to_dict()
+  @classmethod
+  def getInput(cls, body={},headers={},statusCode=200):
+    return cls(body=json.dumps(body),headers=headers,statusCode=statusCode).to_dict()
+  @classmethod
+  def parseDataClass(cls, customClass, event):
+    body = cls.getBody(event)
+    try:
+      return customClass.from_dict(body)
+    except Exception as e:
+      raise Exception(f'unable to parse input{e}, should have the schema {customClass.__doc__},\
+        but the current input is {body}')
+
 @dataclass_json
 @dataclass
 class Product:
