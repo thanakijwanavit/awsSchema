@@ -36,7 +36,12 @@ class Response:
       **dictInput
     )
   @classmethod
-  def getReturn(cls, body:dict, headers:dict = {}, statusCode:int = 200)->dict:
+  def getReturn(cls, body:dict, headers:dict = {
+            'Access-Control-Allow-Headers': '*',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': '*',
+        },
+        statusCode:int = 200)->dict:
     '''
       output dictionary which is suitable for apigateway proxy integration return
     '''
