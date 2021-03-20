@@ -16,13 +16,17 @@ class Response:
   '''
     parse response from apigateway
   '''
-  body: str
+  body: Optional[str]
   statusCode: int = 200
   headers: dict = field(default_factory = dict)
   @classmethod
   def parseBody(cls, dictInput:dict):
     response = cls.fromDict(dictInput)
     return response.body
+  @classmethod
+  def parseHeaders(cls, dictInput:dict):
+    response = cls.fromDict(dictInput)
+    return response.headers
 
   @classmethod
   def fromDict(cls, dictInput:dict):
@@ -53,10 +57,10 @@ class Response:
     return returnObj
   @classmethod
   def returnError(cls, message:str, statusCode:int = 400, **kwargs)->dict:
-    return cls.getReturn(statusCode = 400, body = {'error': message})
+    return cls.getReturn(statusCode = statusCode, body = {'error': message})
   @classmethod
-  def returnSuccess(cls, body:dict = {}, **kwargs)->dict:
-    return cls.getReturn(statusCode = 200, body = body, **kwargs)
+  def returnSuccess(cls, body:dict = {}, statusCode:int = 200, **kwargs)->dict:
+    return cls.getReturn(statusCode = statusCode, body = body, **kwargs)
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclass
