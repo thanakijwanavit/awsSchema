@@ -57,9 +57,11 @@ class Response:
     return returnObj
   @classmethod
   def returnError(cls, message:str, statusCode:int = 400, **kwargs)->dict:
+    '''add override statusCode Here by putting in the values directly'''
     return cls.getReturn(statusCode = statusCode, body = {'error': message})
   @classmethod
   def returnSuccess(cls, body:dict = {}, statusCode:int = 200, **kwargs)->dict:
+    '''add override statusCode Here'''
     return cls.getReturn(statusCode = statusCode, body = body, **kwargs)
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -69,8 +71,19 @@ class Event:
     parse event from apigateway
   '''
   body: str
+
+  httpMethod: Optional[str] = None
+  multiValueHeaders: Optional[dict] = None
+  multiValueQueryStringParameters: Optional[dict] = None
+  path: Optional[str] = None
+  pathParameters: Optional[dict] = None
+  queryStringParameters: Optional[dict] = None
+  requestContext: Optional[dict] = None
+
   headers: dict = field(default_factory = dict)
   statusCode: int = 200
+  isBase64Encoded: bool = False
+
   def getBody(self,*args):
     try:
       return json.loads(self.body)
@@ -79,12 +92,22 @@ class Event:
   def getProducts(self):
     return Products.from_json(self.body)
   def getKey(self, key='product'):
-    return body.get(key)
+    return self.body.get(key)
+
   key = lambda self: json.loads(self.body)['key']
   firstKey = lambda self: next(iter(json.loads(self.body).items()))
   @classmethod
   def parseBody(cls, event, *args):
     return cls.from_dict(event).getBody()
+  @classmethod
+  def parseHeaders(cls, event, *args):
+    return cls.from_dict(event).headers
+  @classmethod
+  def parseQuery(cls, event, *args):
+    return cls.from_dict(event).queryStringParameters
+  @classmethod
+  def parsePath(cls, event, *args):
+    return cls.from_dict(event).path
   @classmethod
   def getInput(cls, body={},headers={},statusCode=200):
     return cls(body=json.dumps(body),headers=headers,statusCode=statusCode).to_dict()
