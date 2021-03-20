@@ -65,7 +65,7 @@ nb_path: "apigateway.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Event" class="doc_header"><code>class</code> <code>Event</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L67" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Event</code>(<strong><code>body</code></strong>:<code>str</code>, <strong><code>headers</code></strong>:<code>dict</code>=<em><code>&lt;factory&gt;</code></em>, <strong><code>statusCode</code></strong>:<code>int</code>=<em><code>200</code></em>)</p>
+<h2 id="Event" class="doc_header"><code>class</code> <code>Event</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L69" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Event</code>(<strong><code>body</code></strong>:<code>str</code>, <strong><code>httpMethod</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>multiValueHeaders</code></strong>:<code>Optional</code>[<code>dict</code>]=<em><code>None</code></em>, <strong><code>multiValueQueryStringParameters</code></strong>:<code>Optional</code>[<code>dict</code>]=<em><code>None</code></em>, <strong><code>path</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>pathParameters</code></strong>:<code>Optional</code>[<code>dict</code>]=<em><code>None</code></em>, <strong><code>queryStringParameters</code></strong>:<code>Optional</code>[<code>dict</code>]=<em><code>None</code></em>, <strong><code>requestContext</code></strong>:<code>Optional</code>[<code>dict</code>]=<em><code>None</code></em>, <strong><code>headers</code></strong>:<code>dict</code>=<em><code>&lt;factory&gt;</code></em>, <strong><code>statusCode</code></strong>:<code>int</code>=<em><code>200</code></em>, <strong><code>isBase64Encoded</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>parse event from apigateway</p>
 
@@ -90,7 +90,7 @@ nb_path: "apigateway.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Product" class="doc_header"><code>class</code> <code>Product</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L102" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Product</code>(<strong><code>cprcode</code></strong>:<code>str</code>, <strong><code>iprcode</code></strong>:<code>str</code>, <strong><code>oprcode</code></strong>:<code>str</code>, <strong><code>ordertype</code></strong>:<code>str</code>, <strong><code>pr_abb</code></strong>:<code>str</code>)</p>
+<h2 id="Product" class="doc_header"><code>class</code> <code>Product</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L125" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Product</code>(<strong><code>cprcode</code></strong>:<code>str</code>, <strong><code>iprcode</code></strong>:<code>str</code>, <strong><code>oprcode</code></strong>:<code>str</code>, <strong><code>ordertype</code></strong>:<code>str</code>, <strong><code>pr_abb</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Product(cprcode: str, iprcode: str, oprcode: str, ordertype: str, pr_abb: str)</p>
 
@@ -115,7 +115,7 @@ nb_path: "apigateway.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Products" class="doc_header"><code>class</code> <code>Products</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L110" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Products</code>(<strong><code>products</code></strong>:<code>List</code>[<a href="/awsSchema/apigateway.html#Product"><code>Product</code></a>])</p>
+<h2 id="Products" class="doc_header"><code>class</code> <code>Products</code><a href="https://github.com/thanakijwanavit/awsSchema/tree/master/awsSchema/apigateway.py#L133" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Products</code>(<strong><code>products</code></strong>:<code>List</code>[<a href="/awsSchema/apigateway.html#Product"><code>Product</code></a>])</p>
 </blockquote>
 <p>Products(products: List[awsSchema.apigateway.Product])</p>
 
@@ -163,7 +163,7 @@ nb_path: "apigateway.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;body&#39;: &#39;{&#34;test&#34;:&#34;test&#34;}&#39;, &#39;headers&#39;: {}, &#39;statusCode&#39;: 200}
+<pre>{&#39;body&#39;: &#39;{&#34;test&#34;:&#34;test&#34;}&#39;, &#39;httpMethod&#39;: None, &#39;multiValueHeaders&#39;: None, &#39;multiValueQueryStringParameters&#39;: None, &#39;path&#39;: None, &#39;pathParameters&#39;: None, &#39;queryStringParameters&#39;: None, &#39;requestContext&#39;: None, &#39;headers&#39;: {}, &#39;statusCode&#39;: 200, &#39;isBase64Encoded&#39;: False}
 </pre>
 </div>
 </div>
@@ -337,7 +337,7 @@ nb_path: "apigateway.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Response</span><span class="o">.</span><span class="n">returnSuccess</span><span class="p">(</span><span class="n">body</span> <span class="o">=</span> <span class="p">{})</span>
 </pre></div>
 
     </div>
@@ -352,8 +352,8 @@ nb_path: "apigateway.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;body&#39;: &#39;{&#34;success&#34;:&#34;true&#34;}&#39;,
- &#39;statusCode&#39;: 206,
+<pre>{&#39;body&#39;: &#39;{}&#39;,
+ &#39;statusCode&#39;: 200,
  &#39;headers&#39;: {&#39;Access-Control-Allow-Headers&#39;: &#39;*&#39;,
   &#39;Access-Control-Allow-Origin&#39;: &#39;*&#39;,
   &#39;Access-Control-Allow-Methods&#39;: &#39;*&#39;}}</pre>
@@ -367,6 +367,12 @@ nb_path: "apigateway.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Error">Error<a class="anchor-link" href="#Error"> </a></h3>
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -434,9 +440,198 @@ Response.fromDict(responseDict)</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;body&#39;: &#39;{&#34;input&#34;:&#34;123&#34;}&#39;, &#39;headers&#39;: {}, &#39;statusCode&#39;: 200}</pre>
+<pre>{&#39;body&#39;: &#39;{&#34;input&#34;:&#34;123&#34;}&#39;,
+ &#39;httpMethod&#39;: None,
+ &#39;multiValueHeaders&#39;: None,
+ &#39;multiValueQueryStringParameters&#39;: None,
+ &#39;path&#39;: None,
+ &#39;pathParameters&#39;: None,
+ &#39;queryStringParameters&#39;: None,
+ &#39;requestContext&#39;: None,
+ &#39;headers&#39;: {},
+ &#39;statusCode&#39;: 200,
+ &#39;isBase64Encoded&#39;: False}</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Parsing-requests">Parsing requests<a class="anchor-link" href="#Parsing-requests"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./testData/sampleEvent.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+  <span class="n">sampleEvent</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)[</span><span class="s1">&#39;input&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="get-inidividual-features">get inidividual features<a class="anchor-link" href="#get-inidividual-features"> </a></h3>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">body</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">parseBody</span><span class="p">(</span><span class="n">sampleEvent</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">body</span> <span class="o">==</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">Event</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">sampleEvent</span><span class="p">)</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;a&#39;: 1}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">headers</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">parseHeaders</span><span class="p">(</span><span class="n">sampleEvent</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">headers</span> <span class="o">==</span> <span class="n">Event</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">sampleEvent</span><span class="p">)</span><span class="o">.</span><span class="n">headers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;Accept&#39;: &#39;*/*&#39;, &#39;Accept-Encoding&#39;: &#39;gzip, deflate&#39;, &#39;cache-control&#39;: &#39;no-cache&#39;, &#39;CloudFront-Forwarded-Proto&#39;: &#39;https&#39;, &#39;CloudFront-Is-Desktop-Viewer&#39;: &#39;true&#39;, &#39;CloudFront-Is-Mobile-Viewer&#39;: &#39;false&#39;, &#39;CloudFront-Is-SmartTV-Viewer&#39;: &#39;false&#39;, &#39;CloudFront-Is-Tablet-Viewer&#39;: &#39;false&#39;, &#39;CloudFront-Viewer-Country&#39;: &#39;US&#39;, &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;headerName&#39;: &#39;headerValue&#39;, &#39;Host&#39;: &#39;gy415nuibc.execute-api.us-east-1.amazonaws.com&#39;, &#39;Postman-Token&#39;: &#39;9f583ef0-ed83-4a38-aef3-eb9ce3f7a57f&#39;, &#39;User-Agent&#39;: &#39;PostmanRuntime/2.4.5&#39;, &#39;Via&#39;: &#39;1.1 d98420743a69852491bbdea73f7680bd.cloudfront.net (CloudFront)&#39;, &#39;X-Amz-Cf-Id&#39;: &#39;pn-PWIJc6thYnZm5P0NMgOUglL1DYtl0gdeJky8tqsg8iS_sgsKD1A==&#39;, &#39;X-Forwarded-For&#39;: &#39;54.240.196.186, 54.182.214.83&#39;, &#39;X-Forwarded-Port&#39;: &#39;443&#39;, &#39;X-Forwarded-Proto&#39;: &#39;https&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">parseQuery</span><span class="p">(</span><span class="n">sampleEvent</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">query</span> <span class="o">==</span><span class="n">Event</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">sampleEvent</span><span class="p">)</span><span class="o">.</span><span class="n">queryStringParameters</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;name&#39;: &#39;me&#39;, &#39;multivalueName&#39;: &#39;me&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">parsePath</span><span class="p">(</span><span class="n">sampleEvent</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">path</span> <span class="o">==</span> <span class="n">Event</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">sampleEvent</span><span class="p">)</span><span class="o">.</span><span class="n">path</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/hello/world
+</pre>
+</div>
 </div>
 
 </div>
