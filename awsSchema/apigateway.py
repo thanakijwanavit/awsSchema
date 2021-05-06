@@ -109,8 +109,12 @@ class Event:
   def parsePath(cls, event, *args):
     return cls.from_dict(event).path
   @classmethod
-  def getInput(cls, body={},headers={},statusCode=200):
-    return cls(body=json.dumps(body),headers=headers,statusCode=statusCode).to_dict()
+  def getInput(cls, body={},headers={},statusCode=200,queryStringParameters={}):
+    '''
+    crate innput for mocking up the object
+    '''
+    return cls(body=json.dumps(body),headers=headers,
+               statusCode=statusCode,queryStringParameters=queryStringParameters).to_dict()
   @classmethod
   def parseDataClass(cls, customClass, event):
     body = cls.getBody(event)
