@@ -3,6 +3,7 @@
 
 
 This library aims to parse aws dictionaries and json strings into dataclass objects
+full docs [here](https://thanakijwanavit.github.io/awsSchema/)
 
 ## Install
 

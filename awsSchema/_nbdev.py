@@ -6,7 +6,8 @@ index = {"S3Event": "S3.ipynb",
          "Response": "apigateway.ipynb",
          "Event": "apigateway.ipynb",
          "Product": "apigateway.ipynb",
-         "Products": "apigateway.ipynb"}
+         "Products": "apigateway.ipynb",
+         "Headers": "apigateway.ipynb"}
 
 modules = ["S3.py",
            "apigateway.py",
