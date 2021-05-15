@@ -16,6 +16,9 @@ entries:
       title: apigateway schema for lambda proxy integration
       url: apigateway.html
     - output: web,pdf
+      title: Title
+      url: cloudfront.html
+    - output: web,pdf
       title: Dynamodb
       url: dynamodb.html
     output: web

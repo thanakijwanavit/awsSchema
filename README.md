@@ -1,9 +1,8 @@
-# AWS_SCHEMA
-> dataclass for aws dictionaries
+# AwsSchema
+> object based sdk for working with aws services for lambda function integration
 
 
-This library aims to parse aws dictionaries and json strings into dataclass objects
-full docs [here](https://thanakijwanavit.github.io/awsSchema/)
+[full docs here](https://thanakijwanavit.github.io/awsSchema/)
 
 ## Install
 
