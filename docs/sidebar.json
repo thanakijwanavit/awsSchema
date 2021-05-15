@@ -3,6 +3,7 @@
     "Overview": "/",
     "S3": "S3.html",
     "apigateway schema for lambda proxy integration": "apigateway.html",
+    "Cloudfront Schema": "cfSchema.html",
     "Title": "cloudfront.html",
     "Dynamodb": "dynamodb.html"
   }
