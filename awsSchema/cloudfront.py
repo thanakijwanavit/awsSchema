@@ -62,7 +62,7 @@ class Response:
   @classmethod
   def returnError(cls, message:str, status:int = 400, **kwargs)->dict:
     '''add override statusCode Here by putting in the values directly'''
-    return cls.getReturn(statusCode = statusCode, body = {'error': message}, **kwargs)
+    return cls.getReturn(status = status, body = {'error': message}, **kwargs)
   @classmethod
   def returnSuccess(cls, body:dict = {}, status:int = 200, **kwargs)->dict:
     '''add override statusCode Here'''
