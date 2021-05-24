@@ -3,14 +3,16 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"S3Event": "S3.ipynb",
-         "Response": "apigateway.ipynb",
+         "Response": "cloudfront.ipynb",
          "Event": "apigateway.ipynb",
-         "Product": "apigateway.ipynb",
-         "Products": "apigateway.ipynb",
-         "Headers": "apigateway.ipynb"}
+         "Product": "cloudfront.ipynb",
+         "Products": "cloudfront.ipynb",
+         "Headers": "apigateway.ipynb",
+         "Viewer": "cloudfront.ipynb"}
 
 modules = ["S3.py",
            "apigateway.py",
+           "cloudfront.py",
            "dynamodb.py"]
 
 doc_url = "https://thanakijwanavit.github.io/awsSchema/"
